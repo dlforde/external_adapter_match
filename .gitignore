@@ -1,0 +1,7 @@
+# config files
+config/*
+!config/.keep
+
+# pyCharm files
+*__pycache__*
+.idea
