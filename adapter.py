@@ -34,15 +34,17 @@ class Adapter:
             # putting calls to both apis here
             data = {}
 
+            request_data = self.request_data['match_id']
+
+            # api-football
+            api_football_client = ApiFootballClient()
+            data['api-football-api'] = api_football_client.get_match(request_data, self.bridge)
+
+
             # football-data
-            request_data = self.request_data['football-data']
             football_data_client = FootballDataClient()
             data['football-data'] = football_data_client.get_match(request_data, self.bridge)
 
-            # api-football
-            request_data = self.request_data['api-football']
-            api_football_client = ApiFootballClient()
-            data['api-football-api'] = api_football_client.get_match(request_data, self.bridge)
 
             # resolve final output
             if data['football-data'] != data['api-football-api']:

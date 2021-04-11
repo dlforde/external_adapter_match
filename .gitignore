@@ -5,3 +5,6 @@ config/*
 # pyCharm files
 *__pycache__*
 .idea
+
+package/
+cl-ea.zip

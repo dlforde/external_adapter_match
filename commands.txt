@@ -1,0 +1,3 @@
+pipenv lock -r > requirements.txt
+pipenv run pip install -r requirements.txt -t ./package
+pipenv run python -m zipfile -c cl-ea.zip main.py adapter.py bridge.py ./lib* ./connectors/ ./config/ ./package/*
